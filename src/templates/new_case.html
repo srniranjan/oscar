@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block Styles %}
+
+{% endblock %}
+
+{% block Content %}
+    <h1>Enter new case information</h1>
+    <form class="form-horizontal" style="margin-top:25px">
+        <div class="control-group">
+            <span class="help-block">Select the CPT code of the procedure you are performing</span>
+            <select id="cpt" class="input-block-level">
+                {% for cpt in cpt_codes %}
+                    <option>{{ cpt }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="control-group">
+            <input type="text" id="name" placeholder="Jhon Doe" class="input-block-level">
+        </div>
+        <div class="control-group">
+            <span class="help-block">Select the surgeon type</span>
+            <select id="surgeon-type" class="input-block-level">
+                <option>Attending</option>
+                <option>Resident</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <input type="text" id="mrn" placeholder="MRN" class="input-block-level">
+        </div>
+        <div class="control-group">
+            <input type="text" id="dos" placeholder="DOS" class="input-block-level">
+        </div>
+        <div class="control-group">
+            <input type="text" id="clinical-info" placeholder="Clinical Info" class="input-block-level">
+        </div>
+        <div class="control-group">
+            <input type="button" class="btn btn-primary" value="Done!" onclick="submitForm();">
+        </div>
+    </form>
+{% endblock %}
+
+{% block Scripts %}
+<script type="text/javascript">
+    function submitForm(){
+        $.post('/save_case', {
+            cpt:$('#cpt').val(),
+            name:$('#name').val(),
+            surgeon_type:$('#surgeon-type').val(),
+            mrn:$('#mrn').val(),
+            clinical_info:$('#clinical-info').val(),
+            dos:$('#dos').val()
+        }).done(function(data){
+            console.log(data);
+        }).error(function(){
+            alert('Sorry there was an error');
+        });
+    }
+</script>
+{% endblock %}
