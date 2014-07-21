@@ -35,6 +35,19 @@ class SaveCaseHandler(webapp2.RequestHandler):
             response['case-id'] = case.key().id()
         self.response.out.write(json.dumps(response))
 
+class SearchCaseHandler(webapp2.RequestHandler):
+    def get(self):
+        index_path = os.path.join(os.path.dirname(__file__), '../templates/search_case.html')
+        self.response.out.write(template.render(index_path, {'cpt_codes':cpt_codes}))
+
+    def post(self):
+        cases = Case.all()
+        cases.filter("cpt =", self.request.get('cpt'))
+        for case in cases.run(limit=10):
+            print case.name
+        print cases.cursor()
+
 app = webapp2.WSGIApplication([('/', HomepageHandler),
                                ('/new_case', NewCaseHandler),
-                               ('/save_case', SaveCaseHandler)])
+                               ('/save_case', SaveCaseHandler),
+                               ('/search_case', SearchCaseHandler)])

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block Styles %}
+
+{% endblock %}
+
+{% block Content %}
+    <h1>Search case</h1>
+    <form class="form-horizontal" style="margin-top:25px">
+        <div class="control-group">
+            <span class="help-block">Select the CPT code of the procedure you are searching</span>
+            <select id="cpt" class="input-block-level">
+                {% for cpt in cpt_codes %}
+                    <option>{{ cpt }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="control-group">
+            <input type="button" class="btn btn-primary" value="Search!" onclick="submitForm();">
+        </div>
+    </form>
+{% endblock %}
+
+{% block Scripts %}
+<script type="text/javascript">
+    function submitForm(){
+        $.post('/search_case', {
+            cpt:$('#cpt').val()
+        }).done(function(data){
+            console.log(data);
+        }).error(function(){
+            alert('Sorry there was an error');
+        });
+    }
+</script>
+{% endblock %}
