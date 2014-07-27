@@ -16,7 +16,9 @@ class HomepageHandler(webapp2.RequestHandler):
             self.redirect(users.create_login_url('/'))
         else:
             index_path = os.path.join(os.path.dirname(__file__), '../templates/index.html')
-            self.response.out.write(template.render(index_path, {'signout_url':users.create_logout_url('/')}))
+            template_params = {'signout_url':users.create_logout_url('/'),
+                               'user_name':user.nickname()}
+            self.response.out.write(template.render(index_path, template_params))
 
 class NewCaseHandler(webapp2.RequestHandler):
     def get(self):
@@ -67,6 +69,21 @@ class SaveStepHandler(webapp2.RequestHandler):
         print response
         self.response.out.write(json.dumps(response))
 
+class LibraryHandler(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        email = user.email()
+        cases = Case.all()
+        cases.filter("user_email =", email)
+        cases_val_objs = []
+        for curr_case in cases.run(limit=100):
+            cases_val_objs.append(curr_case)
+        index_path = os.path.join(os.path.dirname(__file__), '../templates/library.html')
+        print cases_val_objs
+        template_params = {'user_name':user.nickname(),
+                           'cases':cases_val_objs}
+        self.response.out.write(template.render(index_path, template_params))
+
 class SearchCaseHandler(webapp2.RequestHandler):
     def get(self):
         index_path = os.path.join(os.path.dirname(__file__), '../templates/search_case.html')
@@ -84,4 +101,5 @@ app = webapp2.WSGIApplication([('/', HomepageHandler),
                                ('/save_case', SaveCaseHandler),
                                ('/search_case', SearchCaseHandler),
                                ('/new_step', NewStepHandler),
-                               ('/save_step', SaveStepHandler)])
+                               ('/save_step', SaveStepHandler),
+                               ('/library', LibraryHandler)])

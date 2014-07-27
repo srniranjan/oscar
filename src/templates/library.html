@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block Content %}
+    <h1>{{user_name}}'s library</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Patient Name</th>
+            <th>CPT Code</th>
+            <th>Clinical Info</th>
+            <th>MRN</th>
+            <th>DOS</th>
+            <th>Surgeon Type</th>
+        </tr>
+        {% for case in cases %}
+            <tr>
+                <td>{{case.name}}</td>
+                <td>{{case.cpt}}</td>
+                <td>{{case.clinical_info}}</td>
+                <td>{{case.mrn}}</td>
+                <td>{{case.dos}}</td>
+                <td>{{case.surgeon_type}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
