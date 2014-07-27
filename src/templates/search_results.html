@@ -1,0 +1,22 @@
+<table class="table table-striped" id="search_results">
+    <tr>
+        <th>Patient Name</th>
+        <th>CPT Code</th>
+        <th>Clinical Info</th>
+        <th>MRN</th>
+        <th>DOS</th>
+        <th>Surgeon Type</th>
+        <th></th>
+    </tr>
+    {% for case in cases %}
+        <tr>
+            <td>{{case.case.name}}</td>
+            <td>{{case.case.cpt}}</td>
+            <td>{{case.case.clinical_info}}</td>
+            <td>{{case.case.mrn}}</td>
+            <td>{{case.case.dos}}</td>
+            <td>{{case.case.surgeon_type}}</td>
+            <td><input type="button" value="Buy" class="btn btn-small" onclick="buyCase('{{case.case_id}}')"></td>
+        </tr>
+    {% endfor %}
+</table>

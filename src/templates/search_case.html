@@ -6,7 +6,7 @@
 
 {% block Content %}
     <h1>Search case</h1>
-    <form class="form-horizontal" style="margin-top:25px">
+    <form class="form-horizontal" style="margin-top:25px" id="params_form">
         <div class="control-group">
             <span class="help-block">Select the CPT code of the procedure you are searching</span>
             <select id="cpt" class="input-block-level">
@@ -27,7 +27,8 @@
         $.post('/search_case', {
             cpt:$('#cpt').val()
         }).done(function(data){
-            console.log(data);
+            $('#search_results').remove();
+            $('#params_form').append(data);
         }).error(function(){
             alert('Sorry there was an error');
         });

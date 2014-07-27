@@ -87,7 +87,6 @@ class LibraryHandler(webapp2.RequestHandler):
             value_obj.case_id = curr_case.key().id()
             cases_val_objs.append(value_obj)
         index_path = os.path.join(os.path.dirname(__file__), '../templates/library.html')
-        print cases_val_objs
         template_params = {'user_name':user.nickname(),
                            'cases':cases_val_objs}
         self.response.out.write(template.render(index_path, template_params))
@@ -100,9 +99,16 @@ class SearchCaseHandler(webapp2.RequestHandler):
     def post(self):
         cases = Case.all()
         cases.filter("cpt =", self.request.get('cpt'))
-        for case in cases.run(limit=10):
-            print case.name
-        print cases.cursor()
+        cases_val_objs = []
+        for case in cases.run(limit=100):
+            value_obj = CaseValueObj()
+            value_obj.case = case
+            value_obj.case_id = case.key().id()
+            cases_val_objs.append(value_obj)
+        index_path = os.path.join(os.path.dirname(__file__), '../templates/search_results.html')
+        template_params = {'cases':cases_val_objs}
+        self.response.out.write(template.render(index_path, template_params))
+
 
 app = webapp2.WSGIApplication([('/', HomepageHandler),
                                ('/new_case', NewCaseHandler),
