@@ -3,14 +3,19 @@ import json
 import os
 
 from google.appengine.ext.webapp import template
+from google.appengine.api import users
 from model.case import Case
 
 cpt_codes = set(['CPT-1', 'CPT-2', 'CPT-3', 'CPT-4', 'CPT-5', 'CPT-6', 'CPT-7', 'CPT-8'])
 
 class HomepageHandler(webapp2.RequestHandler):
     def get(self):
-        index_path = os.path.join(os.path.dirname(__file__), '../templates/index.html')
-        self.response.out.write(template.render(index_path, None))
+        user = users.get_current_user()
+        if not user:
+            self.redirect(users.create_login_url('/'))
+        else:
+            index_path = os.path.join(os.path.dirname(__file__), '../templates/index.html')
+            self.response.out.write(template.render(index_path, {'signout_url':users.create_logout_url('/')}))
 
 class NewCaseHandler(webapp2.RequestHandler):
     def get(self):
