@@ -1,6 +1,7 @@
 from google.appengine.ext import db
 
 class Case(db.Model):
+    user_email = db.StringProperty()
     cpt = db.StringProperty()
     name = db.StringProperty(indexed=False)
     surgeon_type = db.StringProperty(indexed=False)

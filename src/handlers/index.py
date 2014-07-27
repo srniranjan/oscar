@@ -29,7 +29,9 @@ class SaveCaseHandler(webapp2.RequestHandler):
         if cpt_code not in cpt_codes:
             response['error'] = 'Sorry, invalid CPT code entered!'
         else:
+            user = users.get_current_user()
             case = Case()
+            case.user_email = user.email()
             case.cpt = cpt_code
             case.name = self.request.get('name')
             case.surgeon_type = self.request.get('surgeon_type')
