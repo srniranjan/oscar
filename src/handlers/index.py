@@ -5,6 +5,7 @@ import os
 from google.appengine.ext.webapp import template
 from google.appengine.api import users
 from model.case import Case
+from model.step import Step
 
 cpt_codes = set(['CPT-1', 'CPT-2', 'CPT-3', 'CPT-4', 'CPT-5', 'CPT-6', 'CPT-7', 'CPT-8'])
 
@@ -39,7 +40,31 @@ class SaveCaseHandler(webapp2.RequestHandler):
             case.clinical_info = self.request.get('clinical_info')
             case.dos = self.request.get('dos')
             case.put()
-            response['case-id'] = case.key().id()
+            response['case_id'] = case.key().id()
+        self.response.out.write(json.dumps(response))
+
+class NewStepHandler(webapp2.RequestHandler):
+    def get(self):
+        index_path = os.path.join(os.path.dirname(__file__), '../templates/new_step.html')
+        self.response.out.write(template.render(index_path, {'case_id':self.request.get('case_id')}))
+
+class SaveStepHandler(webapp2.RequestHandler):
+    def post(self):
+        case_id = long(self.request.get('case_id'))
+        response = {}
+        case = Case.get_by_id(case_id)
+        if not case:
+            response['error'] = 'Sorry, invalid case ID provided!'
+        else:
+            step = Step()
+            step.case = case
+            step.start_time = self.request.get('start_time')
+            step.end_time = self.request.get('stop_time')
+            step.description = self.request.get('description')
+            step.notes = self.request.get('notes')
+            step.put()
+            response['case_id'] = case.key().id()
+        print response
         self.response.out.write(json.dumps(response))
 
 class SearchCaseHandler(webapp2.RequestHandler):
@@ -57,4 +82,6 @@ class SearchCaseHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([('/', HomepageHandler),
                                ('/new_case', NewCaseHandler),
                                ('/save_case', SaveCaseHandler),
-                               ('/search_case', SearchCaseHandler)])
+                               ('/search_case', SearchCaseHandler),
+                               ('/new_step', NewStepHandler),
+                               ('/save_step', SaveStepHandler)])

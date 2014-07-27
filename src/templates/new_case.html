@@ -51,7 +51,8 @@
             clinical_info:$('#clinical-info').val(),
             dos:$('#dos').val()
         }).done(function(data){
-            window.location.href = '';
+            response = JSON.parse(data);
+            window.location.href = '/new_step?case_id=' + response.case_id;
         }).error(function(){
             alert('Sorry there was an error');
         });
