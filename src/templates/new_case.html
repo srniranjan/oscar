@@ -51,7 +51,7 @@
             clinical_info:$('#clinical-info').val(),
             dos:$('#dos').val()
         }).done(function(data){
-            console.log(data);
+            window.location.href = '';
         }).error(function(){
             alert('Sorry there was an error');
         });
