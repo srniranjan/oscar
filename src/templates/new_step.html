@@ -48,7 +48,16 @@
     }
 
     function redirectToHome(){
-
+        $.post('/save_step', {
+            name:$('#name').val(),
+            description:$('#description').val(),
+            start_time:$('#start_btn_holder').val(),
+            stop_time:$('#stop_btn_holder').val(),
+            notes:$('#notes').val(),
+            case_id:$('#case_id').val()
+        }).done(function(data){
+            window.location.href = '/';
+        });
     }
 
     function addStep(){
