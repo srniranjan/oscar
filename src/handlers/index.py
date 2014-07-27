@@ -9,6 +9,11 @@ from model.step import Step
 
 cpt_codes = set(['CPT-1', 'CPT-2', 'CPT-3', 'CPT-4', 'CPT-5', 'CPT-6', 'CPT-7', 'CPT-8'])
 
+class CaseValueObj():
+    def __init__(self):
+        self.case = None
+        self.case_id = None
+
 class HomepageHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -77,7 +82,10 @@ class LibraryHandler(webapp2.RequestHandler):
         cases.filter("user_email =", email)
         cases_val_objs = []
         for curr_case in cases.run(limit=100):
-            cases_val_objs.append(curr_case)
+            value_obj = CaseValueObj()
+            value_obj.case = curr_case
+            value_obj.case_id = curr_case.key().id()
+            cases_val_objs.append(value_obj)
         index_path = os.path.join(os.path.dirname(__file__), '../templates/library.html')
         print cases_val_objs
         template_params = {'user_name':user.nickname(),

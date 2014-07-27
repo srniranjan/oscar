@@ -10,16 +10,26 @@
             <th>MRN</th>
             <th>DOS</th>
             <th>Surgeon Type</th>
+            <th></th>
         </tr>
         {% for case in cases %}
             <tr>
-                <td>{{case.name}}</td>
-                <td>{{case.cpt}}</td>
-                <td>{{case.clinical_info}}</td>
-                <td>{{case.mrn}}</td>
-                <td>{{case.dos}}</td>
-                <td>{{case.surgeon_type}}</td>
+                <td>{{case.case.name}}</td>
+                <td>{{case.case.cpt}}</td>
+                <td>{{case.case.clinical_info}}</td>
+                <td>{{case.case.mrn}}</td>
+                <td>{{case.case.dos}}</td>
+                <td>{{case.case.surgeon_type}}</td>
+                <td><input type="button" value="View" class="btn btn-small" onclick="showCase('{{case.case_id}}')"></td>
             </tr>
         {% endfor %}
     </table>
+{% endblock %}
+
+{% block Scripts %}
+<script type="text/javascript">
+    function showCase(case_id){
+        console.log(case_id);
+    }
+</script>
 {% endblock %}

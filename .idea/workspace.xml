@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38c5ffc4-0023-416c-86de-3e81f1a794c0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/index.html" afterPath="$PROJECT_DIR$/src/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/handlers/index.py" afterPath="$PROJECT_DIR$/src/handlers/index.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/library.html" afterPath="$PROJECT_DIR$/src/templates/library.html" />
     </list>
     <ignored path="oscar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +38,7 @@
       <file leaf-file-name="index.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/handlers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="28" selection-start="3245" selection-end="3245" vertical-scroll-proportion="0.0" vertical-offset="875" max-vertical-offset="1665">
+            <state line="87" column="43" selection-start="3356" selection-end="3356" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1785">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -55,10 +55,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="new_case.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/new_case.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="40" selection-start="1985" selection-end="1985" vertical-scroll-proportion="-19.166666" vertical-offset="335" max-vertical-offset="990">
+              <folding>
+                <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_step.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/new_step.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="0" selection-start="2527" selection-end="2541" vertical-scroll-proportion="-22.0" vertical-offset="492" max-vertical-offset="1110">
+              <folding>
+                <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="library.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/templates/library.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="28" selection-start="362" selection-end="362" vertical-scroll-proportion="0.30903327" vertical-offset="0" max-vertical-offset="631">
+            <state line="34" column="14" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.8082409" vertical-offset="0" max-vertical-offset="631">
               <folding />
             </state>
           </provider>
@@ -448,28 +470,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/new_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="40" selection-start="1985" selection-end="1985" vertical-scroll-proportion="-18.166666" vertical-offset="359" max-vertical-offset="990">
-          <folding>
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/step.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="24" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/new_step.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="12" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.46601942" vertical-offset="402" max-vertical-offset="1110">
-          <folding>
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -487,6 +491,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/new_case.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="40" selection-start="1985" selection-end="1985" vertical-scroll-proportion="-19.166666" vertical-offset="335" max-vertical-offset="990">
+          <folding>
+            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="16" selection-start="174" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
@@ -496,16 +509,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/handlers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="28" selection-start="3245" selection-end="3245" vertical-scroll-proportion="0.0" vertical-offset="875" max-vertical-offset="1665">
+        <state line="87" column="43" selection-start="3356" selection-end="3356" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1785">
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/new_step.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="0" selection-start="2527" selection-end="2541" vertical-scroll-proportion="-22.0" vertical-offset="492" max-vertical-offset="1110">
+          <folding>
+            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/library.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="28" selection-start="362" selection-end="362" vertical-scroll-proportion="0.30903327" vertical-offset="0" max-vertical-offset="631">
+        <state line="34" column="14" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.8082409" vertical-offset="0" max-vertical-offset="631">
           <folding />
         </state>
       </provider>
