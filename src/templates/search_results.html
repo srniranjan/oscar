@@ -6,6 +6,7 @@
         <th>MRN</th>
         <th>DOS</th>
         <th>Surgeon Type</th>
+        <th>Surgeon Email</th>
         <th></th>
     </tr>
     {% for case in cases %}
@@ -16,6 +17,7 @@
             <td>{{case.case.mrn}}</td>
             <td>{{case.case.dos}}</td>
             <td>{{case.case.surgeon_type}}</td>
+            <td>{{case.case.user_email}}</td>
             <td><input type="button" value="Buy" class="btn btn-small" onclick="buyCase('{{case.case_id}}')"></td>
         </tr>
     {% endfor %}
