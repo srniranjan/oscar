@@ -8,23 +8,18 @@ threadsafe: false
 handlers:
 - url: /assets/css
   static_dir: assets/css
-  secure: always
 
 - url: /assets/js
   static_dir: assets/js
-  secure: always
 
 - url: /assets/img
   static_dir: assets/img
-  secure: always
 
 - url: /assets/fonts
   static_dir: assets/fonts
-  secure: always
 
 - url: /.*
   script: handlers.index.app
-  secure: always
 
 libraries:
 - name: django
