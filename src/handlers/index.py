@@ -104,7 +104,12 @@ class SearchCaseHandler(webapp2.RequestHandler):
             value_obj = CaseValueObj()
             value_obj.case = case
             value_obj.case_id = case.key().id()
-            cases_val_objs.append(value_obj)
+            search_email = self.request.get('email')
+            if search_email and len(search_email) > 0:
+                if search_email in case.user_email:
+                    cases_val_objs.append(value_obj)
+            else:
+                cases_val_objs.append(value_obj)
         index_path = os.path.join(os.path.dirname(__file__), '../templates/search_results.html')
         template_params = {'cases':cases_val_objs}
         self.response.out.write(template.render(index_path, template_params))

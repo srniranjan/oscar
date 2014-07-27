@@ -16,6 +16,9 @@
             </select>
         </div>
         <div class="control-group">
+            <input type="text" id="email" placeholder="Surgeon's email" class="input-block-level">
+        </div>
+        <div class="control-group">
             <input type="button" class="btn btn-primary" value="Search!" onclick="submitForm();">
         </div>
     </form>
@@ -25,7 +28,8 @@
 <script type="text/javascript">
     function submitForm(){
         $.post('/search_case', {
-            cpt:$('#cpt').val()
+            cpt:$('#cpt').val(),
+            email:$('#email').val()
         }).done(function(data){
             $('#search_results').remove();
             $('#params_form').append(data);

@@ -35,13 +35,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/handlers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="27" selection-start="4345" selection-end="4345" vertical-scroll-proportion="0.0" vertical-offset="1100" max-vertical-offset="1875">
+            <state line="111" column="16" selection-start="4423" selection-end="4423" vertical-scroll-proportion="0.90839696" vertical-offset="1070" max-vertical-offset="1950">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="case.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/case.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="16" selection-start="174" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,6 +64,17 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="new_case.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/new_case.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="90" selection-start="578" selection-end="656" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="990">
+              <folding>
+                <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="library.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/library.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_case.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="search_case.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/search_case.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="30" selection-start="914" selection-end="914" vertical-scroll-proportion="0.68938196" vertical-offset="0" max-vertical-offset="631">
+            <state line="31" column="27" selection-start="1030" selection-end="1030" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
@@ -99,9 +119,9 @@
         <option value="$PROJECT_DIR$/src/templates/new_step.html" />
         <option value="$PROJECT_DIR$/src/templates/index.html" />
         <option value="$PROJECT_DIR$/src/templates/library.html" />
-        <option value="$PROJECT_DIR$/src/handlers/index.py" />
         <option value="$PROJECT_DIR$/src/templates/search_results.html" />
         <option value="$PROJECT_DIR$/src/templates/search_case.html" />
+        <option value="$PROJECT_DIR$/src/handlers/index.py" />
       </list>
     </option>
   </component>
@@ -463,35 +483,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/new_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="40" selection-start="1985" selection-end="1985" vertical-scroll-proportion="0.7290016" vertical-offset="335" max-vertical-offset="990">
-          <folding>
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="16" selection-start="174" selection-end="186" vertical-scroll-proportion="0.13740458" vertical-offset="0" max-vertical-offset="655">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/handlers/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="27" selection-start="4345" selection-end="4345" vertical-scroll-proportion="0.0" vertical-offset="1100" max-vertical-offset="1875">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/library.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="7" selection-start="0" selection-end="1017" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="615">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/new_case.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="90" selection-start="578" selection-end="656" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="990">
+          <folding>
+            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -504,8 +508,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/search_case.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="30" selection-start="914" selection-end="914" vertical-scroll-proportion="0.68938196" vertical-offset="0" max-vertical-offset="631">
+        <state line="31" column="27" selection-start="1030" selection-end="1030" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="690">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="16" selection-start="174" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/handlers/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="16" selection-start="4423" selection-end="4423" vertical-scroll-proportion="0.90839696" vertical-offset="1070" max-vertical-offset="1950">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
